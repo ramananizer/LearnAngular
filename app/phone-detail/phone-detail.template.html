@@ -1,0 +1,31 @@
+<div>
+ {{$ctrl.phone.description}}
+</div>
+ <div>
+  <dl>
+	 <dt>
+		 Infrared
+	 </dt>
+	  <dd>
+		  {{$ctrl.phone.connectivity.infrared | checkmark}}
+	  </dd>
+	  
+	  <dt>
+	   GPS
+	  </dt>
+	  <dd>
+	  {{$ctrl.phone.connectivity.gps | checkmark}}
+	  </dd>
+	 
+  </dl>
+
+ </div>
+<div>
+	<img ng-src = '{{$ctrl.mainImageUrl}}' class="phone"></img>
+</div>
+<ul>
+ <li ng-repeat = 'image in $ctrl.phone.images'>
+	 <img ng-src = '{{image}}' ng-click='$ctrl.setImage(image)' class="phone-thumbs"></img>
+ </li>
+</ul>
+

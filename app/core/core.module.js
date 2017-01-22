@@ -1,0 +1,12 @@
+angular.module('core.phone',['ngResource']);
+angular.module('core.phone')
+	.factory('phone', ['$resource', function($resource){
+		return $resource('phones/:phoneId.json',{},{
+			query :{
+				method :'GET',
+				params : {phoneId : 'phones'},
+				isArray : true
+			}
+		});
+	}]);
+angular.module('core',['core.phone']);
